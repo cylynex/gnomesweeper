@@ -331,8 +331,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BottomBar.cs" />
     <Compile Include="Assets\Scripts\Minefield.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\TopBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="\Volumes\Glacier\unity-projects\gnomesweeper\GnomeSweeper\Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
