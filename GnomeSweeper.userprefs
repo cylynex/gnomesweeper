@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{24E91748-E21D-1539-378D-DCECD34F5365}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tile.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Tile.cs" Line="17" Column="70" />
+      <File FileName="Assets/Scripts/Minefield.cs" Line="34" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.GnomeSweeper PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
