@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4545346398369118}
   - component: {fileID: 212188164531039302}
   - component: {fileID: 114041937184199204}
+  - component: {fileID: 114701798857466714}
+  - component: {fileID: 61269577911750878}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -41,6 +43,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61269577911750878
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1493250380724288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.23880596, y: 0.23880596}
+  m_EdgeRadius: 0
 --- !u!114 &114041937184199204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +81,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+--- !u!114 &114701798857466714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1493250380724288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a363d0813904f999976b51bcef71f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: b2ce73e03e09aee4f827ad50b90fe03c, type: 3}
+  mineSprite: {fileID: 21300000, guid: 4ce15cc0f2e22e0408232f99af23ab35, type: 3}
+  securedTileSprite: {fileID: 21300000, guid: 5b795a1c6fa4ebe4b829babaff119f53, type: 3}
+  deadlyMineSprite: {fileID: 21300000, guid: 232a4c825f5c4214cba220c68d547d8d, type: 3}
+  securedMineSprite: {fileID: 21300000, guid: c53b5837ce45de94497b6b4ad90c9eee, type: 3}
+  emptyTileSprites:
+  - {fileID: 21300000, guid: b69ea8f2f21cfab47a8c75cd94d096ed, type: 3}
+  - {fileID: 21300000, guid: ef645f1eab6e5364d99fc2b2ea632e4d, type: 3}
+  - {fileID: 21300000, guid: b83a24c08bef68647b24263322b1be62, type: 3}
+  - {fileID: 21300000, guid: 254658f1fc4ffdb448ddced14e40cefb, type: 3}
+  - {fileID: 21300000, guid: c31a8c08206f80f4aa6f0edd8a3b11fe, type: 3}
+  - {fileID: 21300000, guid: 3ca8929861022e145b9695a13d5e8e63, type: 3}
+  - {fileID: 21300000, guid: f2d8c48cd61cf754a86cf56eb85edfd0, type: 3}
+  - {fileID: 21300000, guid: e3fc798db8024db46aa5c06ebb45445f, type: 3}
+  - {fileID: 21300000, guid: 9da39137809021a499a3223b8e053f97, type: 3}
 --- !u!212 &212188164531039302
 SpriteRenderer:
   m_ObjectHideFlags: 1

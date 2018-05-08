@@ -12,6 +12,10 @@ public class SpriteController : MonoBehaviour {
     public Sprite[] emptyTileSprites;
 
 
+    // Testing only
+    void Start() {
+        SetEmptyTileSprite(5);
+    }
 
 
 
