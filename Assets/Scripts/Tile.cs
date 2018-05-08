@@ -7,6 +7,16 @@ public class Tile : MonoBehaviour {
     public int x;
     public int y;
 
+    public bool isMine = false;
+    public bool isRevealed = false;
+    public bool isSecured = false;
+
+    public ClickMechanics clickMechanics;
+
+    void Start() {
+        clickMechanics = GetComponent<ClickMechanics>();
+    }
+
     public static Tile CreateNewTile(int x, int y) {
 
         GameObject tile = (GameObject)Instantiate(Resources.Load("Prefabs/Tile"));
