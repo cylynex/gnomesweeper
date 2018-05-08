@@ -40,8 +40,20 @@ public class Minefield : MonoBehaviour {
     }
 
 
-    void Start() {
-        CreateMineField(10, 10, 0);
+
+
+    public void CreateGame(int level) {
+        switch (level) {
+            case 1:
+                CreateMineField(10, 10, 0);
+                break;
+            case 2:
+                CreateMineField(20, 20, 0);
+                break;
+            case 3:
+                CreateMineField(30, 30, 0);
+                break;
+        }
     }
 
 }
