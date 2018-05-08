@@ -332,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BottomBar.cs" />
+    <Compile Include="Assets\Scripts\ClickMechanics.cs" />
     <Compile Include="Assets\Scripts\Minefield.cs" />
     <Compile Include="Assets\Scripts\SpriteController.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />

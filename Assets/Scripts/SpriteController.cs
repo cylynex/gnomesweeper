@@ -14,9 +14,8 @@ public class SpriteController : MonoBehaviour {
 
     // Testing only
     void Start() {
-        SetEmptyTileSprite(5);
+        //SetEmptyTileSprite(5);
     }
-
 
 
     public void SetEmptyTileSprite(int amountNeighborMines) {
