@@ -53,7 +53,7 @@ public class ClickMechanics : MonoBehaviour {
 
         // Do stuff if game is live
         if (tile.isMine) {
-            minefield.LoseGame();
+            minefield.LoseGame(1);
         } else {
             RevealTile();
             if (minefield.IsGameWon()) {

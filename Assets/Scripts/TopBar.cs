@@ -23,7 +23,7 @@ public class TopBar : MonoBehaviour {
             timer -= Time.deltaTime;
             timerDisplay.text = timer.ToString("N0");
             if (timer <= 0) {
-                minefield.LoseGame();
+                minefield.LoseGame(2);
                 minefield.gameStarted = false;
             }
         }

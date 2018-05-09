@@ -9,6 +9,7 @@ public class Minefield : MonoBehaviour {
     public int amountTilesUnrevealed;
     public bool gameStarted = false;
     public int minesLeft;
+    public GameObject losePanel;
 
     public int xTotal;
     public int yTotal;
@@ -18,6 +19,7 @@ public class Minefield : MonoBehaviour {
 
     void Start() {
         topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
+        losePanel.SetActive(false);
     }
 
     public void CreateMineField(int xTotal, int yTotal, int amountMines, int timeLeft) {
@@ -60,10 +62,10 @@ public class Minefield : MonoBehaviour {
                 CreateMineField(10, 10, 10,100);
                 break;
             case 2:
-                CreateMineField(20, 20, 20,250);
+                CreateMineField(20, 20, 40,250);
                 break;
             case 3:
-                CreateMineField(30, 30, 30,500);
+                CreateMineField(30, 30, 99,500);
                 break;
         }
     }
@@ -78,8 +80,19 @@ public class Minefield : MonoBehaviour {
     }
 
 
-    public void LoseGame() {
-        Debug.Log("lose");
+    public void LoseGame(int typeLoss) {
+        if (typeLoss == 1) {
+            // Hit a mine
+            Debug.Log("hit a mine LOSER");
+
+        } else if (typeLoss == 2) {
+            // ran out of time
+            Debug.Log("ran out of time LOSER");
+        }
+
+        gameStarted = false;
+        losePanel.SetActive(true);
+
     }
 
 
