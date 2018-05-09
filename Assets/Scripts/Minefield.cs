@@ -28,12 +28,10 @@ public class Minefield : MonoBehaviour {
         this.gameStarted = false;
 
         // Timer Stuff
-        //Text timer = GameObject.FindGameObjectWithTag("timer").GetComponent<Text>();
-
-        float timer = topbar.timer;
         topbar.timerDisplay.text = timeLeft.ToString();
         topbar.timer = timeLeft;
 
+        // Set amount of mines
         topbar.mineCounter.text = amountMines.ToString();
 
         // Delete all existing tiles
