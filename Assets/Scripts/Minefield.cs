@@ -85,4 +85,17 @@ public class Minefield : MonoBehaviour {
         Debug.Log("win");
     }
 
+
+    public void SubtractMine() {
+        Debug.Log("subtract");
+        amountMines--;
+        topbar.mineCounter.text = amountMines.ToString();
+    }
+
+
+    public void AddMine() {
+        amountMines++;
+        topbar.mineCounter.text = amountMines.ToString();
+    }
+
 }

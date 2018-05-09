@@ -28,12 +28,14 @@ public class SpriteController : MonoBehaviour {
     public void SetMineSprite() {
         GetComponent<SpriteRenderer>().sprite = mineSprite;
         GetComponent<BoxCollider2D>().enabled = false;
+        Debug.Log("mine");
     }
 
 
     // Set secured tile
     public void SetSecuredTileSprite() {
         GetComponent<SpriteRenderer>().sprite = securedTileSprite;
+        minefield.SubtractMine();
     }
 
 
@@ -41,20 +43,21 @@ public class SpriteController : MonoBehaviour {
     public void SetDeadlyMineSprite() {
         GetComponent<SpriteRenderer>().sprite = deadlyMineSprite;
         GetComponent<BoxCollider2D>().enabled = false;
+        Debug.Log("deadly");
     }
 
 
     // Set secured mine
     public void SetSecuredMineSprite() {
         GetComponent<SpriteRenderer>().sprite = securedMineSprite;
-        minefield.amountMines--;
+        Debug.Log("secured");
     }
 
 
     // Set default tile
     public void SetDefaultSprite() {
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
-        minefield.amountMines++;
+        minefield.AddMine();
     }
 
 
