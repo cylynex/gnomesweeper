@@ -8,6 +8,7 @@ public class TopBar : MonoBehaviour {
     Minefield minefield;
     public float timer;
     public Text timerDisplay;
+    public Text mineCounter;
 
     void Start() {
         minefield = GameObject.FindGameObjectWithTag("Minefield").GetComponent<Minefield>();

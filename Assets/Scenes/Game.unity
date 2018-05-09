@@ -1331,7 +1331,7 @@ GameObject:
   - component: {fileID: 2084099597}
   - component: {fileID: 2084099596}
   m_Layer: 5
-  m_Name: TimerText
+  m_Name: mineCounter
   m_TagString: timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1387,7 +1387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999
+  m_Text: 0
 --- !u!222 &2084099597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1444,3 +1444,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   timerDisplay: {fileID: 1203629470}
+  mineCounter: {fileID: 2084099596}

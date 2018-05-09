@@ -13,6 +13,11 @@ public class Minefield : MonoBehaviour {
     public int yTotal;
     public Tile[,] tiles;
 
+    TopBar topbar;
+
+    void Start() {
+        topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
+    }
 
     public void CreateMineField(int xTotal, int yTotal, int amountMines, int timeLeft) {
 
@@ -22,11 +27,14 @@ public class Minefield : MonoBehaviour {
         this.amountTilesUnrevealed = xTotal * yTotal;
         this.gameStarted = false;
 
-        Text timer = GameObject.FindGameObjectWithTag("timer").GetComponent<Text>();
-        timer.text = timeLeft.ToString();
+        // Timer Stuff
+        //Text timer = GameObject.FindGameObjectWithTag("timer").GetComponent<Text>();
 
-        TopBar topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
+        float timer = topbar.timer;
+        topbar.timerDisplay.text = timeLeft.ToString();
         topbar.timer = timeLeft;
+
+        topbar.mineCounter.text = amountMines.ToString();
 
         // Delete all existing tiles
         if (this.tiles != null) {

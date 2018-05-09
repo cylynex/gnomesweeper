@@ -12,9 +12,8 @@ public class SpriteController : MonoBehaviour {
     public Sprite[] emptyTileSprites;
 
 
-    // Testing only
     void Start() {
-        //SetEmptyTileSprite(5);
+        //topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
     }
 
 
@@ -34,6 +33,7 @@ public class SpriteController : MonoBehaviour {
     // Set secured tile
     public void SetSecuredTileSprite() {
         GetComponent<SpriteRenderer>().sprite = securedTileSprite;
+
     }
 
 
