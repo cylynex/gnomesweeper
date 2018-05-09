@@ -8,6 +8,7 @@ public class Minefield : MonoBehaviour {
     public int amountMines;
     public int amountTilesUnrevealed;
     public bool gameStarted = false;
+    public int minesLeft;
 
     public int xTotal;
     public int yTotal;
@@ -26,6 +27,7 @@ public class Minefield : MonoBehaviour {
         this.amountMines = amountMines;
         this.amountTilesUnrevealed = xTotal * yTotal;
         this.gameStarted = false;
+        minesLeft = amountMines;
 
         // Timer Stuff
         topbar.timerDisplay.text = timeLeft.ToString();
@@ -87,15 +89,14 @@ public class Minefield : MonoBehaviour {
 
 
     public void SubtractMine() {
-        Debug.Log("subtract");
-        amountMines--;
-        topbar.mineCounter.text = amountMines.ToString();
+        minesLeft--;
+        topbar.mineCounter.text = minesLeft.ToString();
     }
 
 
     public void AddMine() {
-        amountMines++;
-        topbar.mineCounter.text = amountMines.ToString();
+        minesLeft++;
+        topbar.mineCounter.text = minesLeft.ToString();
     }
 
 }

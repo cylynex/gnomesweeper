@@ -66,19 +66,18 @@ public class ClickMechanics : MonoBehaviour {
 
     // Add mines to board
     void CreateMines() {
-        int minesLeft = minefield.amountMines;
+        int minesLeftToCreate = minefield.amountMines;
         int tilesLeft = minefield.amountTilesUnrevealed;
 
-        Debug.Log("creating mines: " + minesLeft);
         // Loop through tiles and randomly assign mines
         for (int x = 0; x < minefield.xTotal; x++) {
             for (int y = 0; y < minefield.yTotal; y++) {
                 Tile thisTile = minefield.tiles[x, y];
-                float chanceForMine = (float)minesLeft / (float)tilesLeft;
+                float chanceForMine = (float)minesLeftToCreate / (float)tilesLeft;
 
                 if (Random.value <= chanceForMine) {
                     thisTile.isMine = true;
-                    minesLeft--;
+                    minesLeftToCreate--;
                 }
 
                 tilesLeft--;

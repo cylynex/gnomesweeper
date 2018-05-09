@@ -24,6 +24,7 @@ public class TopBar : MonoBehaviour {
             timerDisplay.text = timer.ToString("N0");
             if (timer <= 0) {
                 minefield.LoseGame();
+                minefield.gameStarted = false;
             }
         }
     }
