@@ -10,6 +10,7 @@ public class Minefield : MonoBehaviour {
     public bool gameStarted = false;
     public int minesLeft;
     public GameObject losePanel;
+    public GameObject winPanel;
 
     public int xTotal;
     public int yTotal;
@@ -20,6 +21,7 @@ public class Minefield : MonoBehaviour {
     void Start() {
         topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
         losePanel.SetActive(false);
+        winPanel.SetActive(false);
     }
 
     public void CreateMineField(int xTotal, int yTotal, int amountMines, int timeLeft) {
@@ -92,12 +94,12 @@ public class Minefield : MonoBehaviour {
 
         gameStarted = false;
         losePanel.SetActive(true);
-
     }
 
 
     public void WinGame() {
-        Debug.Log("win");
+        gameStarted = false;
+        winPanel.SetActive(true);
     }
 
 
