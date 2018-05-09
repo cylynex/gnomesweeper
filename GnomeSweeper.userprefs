@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{24E91748-E21D-1539-378D-DCECD34F5365}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ClickMechanics.cs">
     <Files>
-      <File FileName="Assets/Scripts/Tile.cs" Line="17" Column="70" />
-      <File FileName="Assets/Scripts/Minefield.cs" Line="42" Column="5" />
+      <File FileName="Assets/Scripts/Tile.cs" Line="43" Column="1" />
+      <File FileName="Assets/Scripts/Minefield.cs" Line="80" Column="26" />
       <File FileName="Assets/Scripts/BottomBar.cs" Line="14" Column="92" />
       <File FileName="Assets/Scripts/TopBar.cs" Line="14" Column="50" />
-      <File FileName="Assets/Scripts/SpriteController.cs" Line="19" Column="5" />
-      <File FileName="Assets/Scripts/ClickMechanics.cs" Line="24" Column="24" />
+      <File FileName="Assets/Scripts/SpriteController.cs" Line="61" Column="1" />
+      <File FileName="Assets/Scripts/ClickMechanics.cs" Line="66" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.GnomeSweeper PreferredExecutionTarget="Unity.Editor" />

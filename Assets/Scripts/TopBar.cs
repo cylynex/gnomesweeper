@@ -1,13 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TopBar : MonoBehaviour {
 
     Minefield minefield;
+    public float timer;
+    public Text timerDisplay;
 
     void Start() {
-        this.minefield = GameObject.FindGameObjectWithTag("Minefield").GetComponent<Minefield>();
+        minefield = GameObject.FindGameObjectWithTag("Minefield").GetComponent<Minefield>();
+        timer = 0;
+    }
+
+
+    void Update() {
+
+        // Only run the timer if the game is started
+        if (minefield.gameStarted) {
+            timer -= Time.deltaTime;
+            timerDisplay.text = timer.ToString("N0");
+            if (timer <= 0) {
+                minefield.LoseGame();
+            }
+        }
     }
 
     private void FixedUpdate() {

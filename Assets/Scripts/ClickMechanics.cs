@@ -21,11 +21,9 @@ public class ClickMechanics : MonoBehaviour {
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(1)) {
             if (tile.isSecured) {
-                Debug.Log("secured");
                 spriteController.SetDefaultSprite();
                 tile.isSecured = false;
             } else {
-                Debug.Log("not secured");
                 spriteController.SetSecuredTileSprite();
                 tile.isSecured = true;
             }
@@ -35,7 +33,7 @@ public class ClickMechanics : MonoBehaviour {
 
     // Left Click
     private void OnMouseUpAsButton() {
-        ClickTile();
+        this.ClickTile();
     }
 
 
@@ -54,10 +52,13 @@ public class ClickMechanics : MonoBehaviour {
         }
 
         // Do stuff if game is live
-        if (this.tile.isMine) {
-            Debug.Log("game over");
+        if (tile.isMine) {
+            minefield.LoseGame();
         } else {
-            this.RevealTile();
+            RevealTile();
+            if (minefield.IsGameWon()) {
+                minefield.WinGame();
+            }
         }
 
     }
@@ -68,6 +69,7 @@ public class ClickMechanics : MonoBehaviour {
         int minesLeft = minefield.amountMines;
         int tilesLeft = minefield.amountTilesUnrevealed;
 
+        Debug.Log("creating mines: " + minesLeft);
         // Loop through tiles and randomly assign mines
         for (int x = 0; x < minefield.xTotal; x++) {
             for (int y = 0; y < minefield.yTotal; y++) {
@@ -115,10 +117,11 @@ public class ClickMechanics : MonoBehaviour {
 
 
     // Show adjacent tiles which are empty
+
     void RevealIfValid(int x, int y) {
-        Debug.Log("x is " + x + " and y is " + y);
-        if (x >= 0 && x <= minefield.xTotal && y >= 0 && y < minefield.yTotal) {
-            minefield.tiles[x, y].clickMechanics.RevealTile();
+        if (x >= 0 && x < this.minefield.xTotal
+           && y >= 0 && y < this.minefield.yTotal) {
+            this.minefield.tiles[x, y].clickMechanics.RevealTile();
         }
     }
 

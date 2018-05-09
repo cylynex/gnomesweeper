@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minefield : MonoBehaviour {
 
@@ -12,13 +13,20 @@ public class Minefield : MonoBehaviour {
     public int yTotal;
     public Tile[,] tiles;
 
-    public void CreateMineField(int xTotal, int yTotal, int amountMines) {
+
+    public void CreateMineField(int xTotal, int yTotal, int amountMines, int timeLeft) {
 
         this.xTotal = xTotal;
         this.yTotal = yTotal;
         this.amountMines = amountMines;
         this.amountTilesUnrevealed = xTotal * yTotal;
         this.gameStarted = false;
+
+        Text timer = GameObject.FindGameObjectWithTag("timer").GetComponent<Text>();
+        timer.text = timeLeft.ToString();
+
+        TopBar topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
+        topbar.timer = timeLeft;
 
         // Delete all existing tiles
         if (this.tiles != null) {
@@ -27,33 +35,50 @@ public class Minefield : MonoBehaviour {
             }
         }
 
-
         this.tiles = new Tile[xTotal, yTotal];
 
         for (int x = 0; x < xTotal; x++) {
             for (int y = 0; y < yTotal; y++) {
                 tiles[x, y] = Tile.CreateNewTile(x, y);
             }
-
         }
 
+        gameStarted = true;
+
     }
-
-
 
 
     public void CreateGame(int level) {
         switch (level) {
             case 1:
-                CreateMineField(10, 10, 0);
+                CreateMineField(10, 10, 10,100);
                 break;
             case 2:
-                CreateMineField(20, 20, 0);
+                CreateMineField(20, 20, 20,250);
                 break;
             case 3:
-                CreateMineField(30, 30, 0);
+                CreateMineField(30, 30, 30,500);
                 break;
         }
+    }
+
+
+    public bool IsGameWon() {
+        if (amountTilesUnrevealed == amountMines) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public void LoseGame() {
+        Debug.Log("lose");
+    }
+
+
+    public void WinGame() {
+        Debug.Log("win");
     }
 
 }
