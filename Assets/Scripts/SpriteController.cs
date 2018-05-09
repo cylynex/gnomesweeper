@@ -10,10 +10,11 @@ public class SpriteController : MonoBehaviour {
     public Sprite deadlyMineSprite;
     public Sprite securedMineSprite;
     public Sprite[] emptyTileSprites;
-
+    Minefield minefield;
 
     void Start() {
         //topbar = GameObject.FindGameObjectWithTag("topbar").GetComponent<TopBar>();
+        minefield = GameObject.FindGameObjectWithTag("Minefield").GetComponent<Minefield>();
     }
 
 
@@ -33,7 +34,6 @@ public class SpriteController : MonoBehaviour {
     // Set secured tile
     public void SetSecuredTileSprite() {
         GetComponent<SpriteRenderer>().sprite = securedTileSprite;
-
     }
 
 
@@ -47,12 +47,14 @@ public class SpriteController : MonoBehaviour {
     // Set secured mine
     public void SetSecuredMineSprite() {
         GetComponent<SpriteRenderer>().sprite = securedMineSprite;
+        minefield.amountMines--;
     }
 
 
     // Set default tile
     public void SetDefaultSprite() {
         GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        minefield.amountMines++;
     }
 
 

@@ -20,7 +20,7 @@ public class Minefield : MonoBehaviour {
     }
 
     public void CreateMineField(int xTotal, int yTotal, int amountMines, int timeLeft) {
-
+        
         this.xTotal = xTotal;
         this.yTotal = yTotal;
         this.amountMines = amountMines;
@@ -48,8 +48,6 @@ public class Minefield : MonoBehaviour {
                 tiles[x, y] = Tile.CreateNewTile(x, y);
             }
         }
-
-        gameStarted = true;
 
     }
 
